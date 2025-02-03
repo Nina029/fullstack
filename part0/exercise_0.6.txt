@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/spa/new_note
+    activate server
+
+    Note right of browser: New note data sent as the body of the POST request as JSON data. 
+    Note right of browser: The server creates a new note object, and adds it to an array called notes
+
+    server-->>browser: HTTP status code 201
+    deactivate server
